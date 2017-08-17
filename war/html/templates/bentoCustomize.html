@@ -1,0 +1,45 @@
+<!-- Contains the 'Customize Bento' screen-->
+<div class ="contentScreen" id="screenCustomize">
+	<div class ="panelLeft">
+		<form name="screenBentoForm" onsubmit="return registerBento()"> 
+			<label class="contentLabel"> Name: <br> </label> 
+			<input class ="inputField" type="text" id="bentoName" placeholder="E.g. Bento Special" required>
+			<input class="inputPrice" type="number" id="bentoTotalPrice" disabled>
+			<br>
+			 
+			<label class="contentLabel"> Main Dish: <br> </label>
+			<select class="inputField" id="bentoMainDish" onchange="changePriceDisplay('bentoMainDish', 'mainDishPrice')">
+				<!-- The options will be populated programatically -->
+			</select>
+			<input class="inputPrice" type="number" id="mainDishPrice" disabled>
+			<br>
+			
+			<label class="contentLabel"> Soup:<br> </label>
+			<select class="inputField" id="bentoSoup" onchange="changePriceDisplay('bentoSoup', 'soupPrice')">
+				<!-- The options will be populated programatically -->
+			</select>
+			<input class="inputPrice" type="number" id="soupPrice" disabled>
+			<br>
+			
+			<button class="btnRegister" id="btnSaveBento" data-bentoIndex="-1" type="submit"> Register Bento </button>
+		</form>
+	</div>
+
+	<div class ="panelRight">
+		<table id="tblSideDish">
+			<tr>
+				<td> <label class="contentLabel"> Side Dish: </label> </td>
+				<td> <label class="contentLabel"> Price: </label> </td>
+			</tr>
+			<tr id="sideDishRow1">
+				<td>
+					<select class="inputField" id="bentoSideDish1" onchange="changePriceDisplay('bentoSideDish1', 'sideDishPrice1')">
+						<!-- The options will be populated programatically -->
+					</select>
+				</td>
+				<td><input class="inputPrice" type="number" id="sideDishPrice1" disabled></td>
+			</tr>
+		</table>
+		<button class="btnRegister" id="btnAddSideDish" onclick="insertSideDishRow()"> Add SideDish</button>
+	</div>
+</div>

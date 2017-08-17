@@ -1,0 +1,69 @@
+<!-- ------------------------------------------------------------------------------
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Copyright (C) Rococo Global Technologies, Inc - All Rights Reserved 2016
+ * -------------------------------------------------------------------------------->
+ 
+ <!--
+* This file contains the necessary elements that will be included in the web page.
+* @author Lehmar Cabrillos
+* @version 0.01
+* Version History
+* [04/11/2016] 0.01 遯ｶ�ｿｽ Lehmar Cabrillos 遯ｶ�ｿｽ initial codes
+-->	
+
+<!DOCTYPE html>
+<html ng-app="bentoApp">	
+	<head>
+		<title> Bento Application </title>
+		<!-- Attaching the style sheet for formatting. -->
+		<link rel="stylesheet" type="text/css" href="../css/Bento.css">
+	</head>
+	
+	<body ng-controller="bentoMainController" >
+		<!-- The left panel for the menus and labels.-->
+		<div id="section">
+			<!-- Contains the logo and name of the application.-->
+			<div id="sectionHeader">
+				<img id="bentoLogo" src="..\assets\bento_logo.png" alt="Bento Application" > 
+				<h1>BENTO APPLICATION</h1>
+			</div>
+			
+			<!-- Contains labels and images for the changes in the content div.-->
+			<div id="sectionChoices">
+				<img class="screenIcon" src="..\assets\dish_icon.png" alt="Register Dish" > 
+				<a class="screenLabel" href="#registerDishScreen" title="Register Dish"> Register Dish </a><br>
+				<img class="screenIcon" src="..\assets\customize_icon.png" alt="Customize Bento" > 
+				<a class="screenLabel" href="" title="Customize Bento" > Customize Bento </a><br>
+				<img class="screenIcon" src="..\assets\menu_icon.png" alt="Bento Menu" > 
+				<a class="screenLabel" href="" title="Bento Menu" > Bento Menu </a><br>
+			</div>
+		</div>
+		
+		<!-- Holds the forms for inputs and display.-->
+		<div id="content">
+			<!-- Holds the title of the content and logo.-->
+			<div id="contentHeader">
+				<img id="headerIcon" ng-src="..\assets\{{headerImage}}" alt="Register Dish" > 
+				<label id="headerLabel" ng-bind="headerName"> </label>
+			</div>
+			<!--Contains the span that will hold the message (error/success) to be displayed.-->
+			<div id="messageDiv"> 
+				<span id="spanMessage"> </span>
+			</div>
+		
+			<!-- Contains the 'screen' that will be displayed programmatically using the ng-view.
+				Routing is in 'bentoMain.js' file.-->
+			<div>
+				<ng-view>  Loading...</ng-view>
+			</div>
+		</div>
+		<!-- Attaching Javascript files for screen interaction.-->
+		<script src="../js/angular.js"></script>
+		<script src="../js/angular-route.js"></script>
+		<script src="../js/bentoMain.js"></script>
+		<script src="../js/bentoDish.js"></script>
+		<script src="../js/bentoCustomize.js"></script>
+		<script src="../js/bentoMenu.js"></script>
+	</body>
+</html>

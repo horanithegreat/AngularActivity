@@ -1,0 +1,33 @@
+<!-- Contains the 'Register Dish' screen-->			
+<div class ="contentScreen" id="screenDish">
+	<div class ="panelLeft">
+		<!-- TODO: Add directive (Refer to 1.1.)-->
+		<form name="screenDishForm" ng-submit="registerDish()"> 
+			<!--Label and input for the name of dish -->
+			<label class="contentLabel"> Name: </label><br> 
+			<!-- TODO: Add directive (Refer to 1.2.)-->
+			<input class ="inputField" ng-model="dishItem.name" type="text" placeholder="E.g. Beef Teriyaki" required><br>
+				
+			<!-- Label and Drop down list for the type of dish -->
+			<label class="contentLabel"> Type: </label><br> 
+			<!-- TODO: Add directive (Refer to 1.2.)-->
+			<!-- TODO: Add directive (Refer to 1.3.)-->
+			<select class = "inputField" ng-model="dishItem.type" ng-options="optionValue.displayValue for optionValue in typeArray">
+				<!-- Options are created programatically. -->
+			</select><br>
+			 
+			<!--Label and input for the price of dish -->
+			<label class="contentLabel"> Price: </label> <br>
+			<!-- TODO: Add directive (Refer to 1.2.)-->
+			<input class="inputField" ng-model="dishItem.price" type="number" minimum="0" placeholder="E.g. 120.00" required><br>
+			
+			<!--Button that will be used to register the dish. -->
+			<button class="btnRegister" type="submit"> Register Dish </button>
+		</form>
+	</div> 
+	
+	<!--Holds the image of the selected type of dish.-->
+	<div class ="panelRight">
+		<img id="imgDishType" ng-src="..\..\assets\{{dishItem.type.imageFile}}" alt="Dish Type" > 
+	</div>
+</div>
